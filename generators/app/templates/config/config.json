@@ -1,0 +1,74 @@
+{
+    "requestURI": "",
+    "i18n": {
+        "contentPath": "path:./locales",
+        "fallback": "en-US"
+    },
+    "express": {
+        "view engine": "js",
+        "view": "require:react-engine/lib/expressView",
+        "view cache": false,
+        "views": "path:./build",
+        "mountpath": "config:requestURI"
+    },
+    "view engines": {
+        "js": {
+            "module": "react-engine/lib/server",
+            "renderer": {
+                "method": "create",
+                "arguments": [{
+                    "routes": "require:./build/routes",
+                    "routesFilePath": "path:./build/routes",
+                    "reduxStoreInitiator": "path:./build/store"
+                }]
+            }
+        }
+    },
+    "middleware": {
+        "logger": {
+            "module": {
+                "name": "morgan",
+                "arguments": [{
+                    "format": "tiny"
+                }]
+            }
+        },
+        "static": {
+            "enabled": true,
+            "priority": 40,
+            "name": "serve-static",
+            "module": {
+                "arguments": ["path:./build/public"]
+            }
+        },
+        "appsec": {
+            "enabled": true,
+            "priority": 101,
+            "module": {
+                "name": "lusca",
+                "arguments": [{
+                    "csp": {
+                        "policy": {
+                           
+                        }
+                    },
+                    "csrf": true,
+                    "hsts": {
+                        "maxAge": 31536000,
+                        "includeSubDomains": true,
+                        "preload": true
+                    },
+                    "xframe": "SAMEORIGIN",
+                    "xssProtection": true
+                }]
+            }
+        },
+        "router": {
+            "module": {
+                "arguments": [{
+                    "directory": "path:./dist/controllers"
+                }]
+            }
+        }
+    }
+}
