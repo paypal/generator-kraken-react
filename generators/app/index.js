@@ -34,7 +34,7 @@ module.exports = class extends Generator{
     {
       type: 'input',
       name: 'mountPath',
-      message: 'app mount-path'
+      message: 'app mount-path, if you provide mount-path \'foo\'. You will be accessing your app @ http://localhost:<PORT>/foo'
     }]).then(answers => {
       this.name = answers.name;
       this.description = answers.description || 'Taskify app';
