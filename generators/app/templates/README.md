@@ -81,4 +81,5 @@ run `npm run dev` to start development.
 **Heroku Deployment**
 This requires [heroku-cli](https://devcenter.heroku.com/articles/heroku-cli) to be installed on your system.
 run `heroku create && heroku config:set NPM_CONFIG_PRODUCTION=false && git push heroku <your_branch>:master` to deploy on heroku.
+Once deployed you can run `heroku open` to open your app in your default web browser.
 You will need a heroku account to deploy, if you don't have go ahead to [heroku](https://dashboard.heroku.com/) and get a free acount.
