@@ -35,7 +35,7 @@ $ yo kraken-react
 
 **Heroku Deployment**
 This requires [heroku-cli](https://devcenter.heroku.com/articles/heroku-cli) to be installed on your system.
-`cd` to the newly created project directory & run `heroku create && heroku config:set NPM_CONFIG_PRODUCTION=false && git push heroku <your_branch>:master` to deploy on heroku.
+`cd` to the newly created project directory & run `heroku create && heroku config:set NPM_CONFIG_PRODUCTION=false && git push heroku <your_branch>:master` to deploy on heroku.  
 Once deployed you can run `heroku open` to open your app in your default web browser.
 You will need a heroku account to deploy, if you don't have go ahead to [heroku](https://dashboard.heroku.com/) and get a free acount.
 
@@ -86,7 +86,7 @@ You will need a heroku account to deploy, if you don't have go ahead to [heroku]
 **Basic Usage**
 
 - **src**
-It contains all the server side code. Routes & route handlers are defined in controllers. The path at which a route is mounted is decided by the directory structure as follows.
+It contains all the server side code(node, express & kraken). Routes & route handlers are defined in controllers. The path at which a route is mounted is decided by the directory structure as follows.
 `src/controllers` dir is recursively scanned to find files that match the **controller-spec API**. With this API, the directory structure dictates the paths at which handlers will be mounted.
 For example:
     ```text
