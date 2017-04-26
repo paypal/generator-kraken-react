@@ -73,3 +73,12 @@ It contains all the front-end code written. The **public/store/index.js**  conta
     - **public/reducers/** contains the reducers
     - **public/routes/** contains the `react-router` routes
     - **public/main.js** contains the bootstraping code to connect & initialize various components of the application. You will rarely need to change or revisit this file
+
+## Running your App
+
+run `npm run dev` to start development.
+
+**Heroku Deployment**
+This requires [heroku-cli](https://devcenter.heroku.com/articles/heroku-cli) to be installed on your system.
+run `heroku create && heroku config:set NPM_CONFIG_PRODUCTION=false && git push heroku <your_branch>:master` to deploy on heroku.
+You will need a heroku account to deploy, if you don't have go ahead to [heroku](https://dashboard.heroku.com/) and get a free acount.
