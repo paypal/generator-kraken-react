@@ -27,5 +27,6 @@
     "gulp-beautify": "^2.0.1",
     "gulp-filter": "^5.0.0",
     "yeoman-generator": "^1.1.1"
-  }
+  },
+  "license": "MIT"
 }
